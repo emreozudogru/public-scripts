@@ -1,2 +1,1 @@
-# public-scripts
-
+Sistem Birimi için Sunucu Scriptleri
