@@ -7,6 +7,8 @@
 # curl -L https://gitlab.com/frmax/public-scripts/raw/master/update-mail.sh | sudo sh
 #
 # Download and update files
+curl -L https://gitlab.com/frmax/public-scripts/raw/master/update-common.sh | sudo sh
+mkdir -p /root/Scripts
 array=( transport-queue-check.sh )
 for i in "${array[@]}"
 do
