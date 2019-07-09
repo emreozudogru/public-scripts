@@ -12,7 +12,7 @@ array=( update.bad.phising.sh backup.sh kuyrukkontrol2019.sh mailsil.sh)
 for i in "${array[@]}"
 do
 	echo $i
-	wget --backups=1 https://gitlab.com/frmax/public-scripts/raw/master/common/$i -O /root/Scripts/$i
+	wget --backups=1 https://gitlab.com/frmax/public-scripts/raw/master/smtpgw/$i -O /root/Scripts/$i
 	chmod +x /root/Scripts/$i
 done
 
