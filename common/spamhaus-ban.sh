@@ -68,3 +68,12 @@ done
 /sbin/iptables -A INPUT -s 104.223.163.95 -j DROP
 /sbin/iptables -A INPUT -s 185.132.126.81 -j DROP
 /sbin/iptables -A INPUT -s 160.20.12.176 -j DROP
+
+#TurkNet Beyaz Liste
+/sbin/iptables -A INPUT -s 10.2.8.0/24 -p tcp -m tcp --dport 443 -j ACCEPT
+/sbin/iptables -A INPUT -s 10.2.1.28/32 -p tcp -m tcp --dport 22 -j ACCEPT
+/sbin/iptables -A INPUT -s 10.2.8.0/24 -p tcp -m tcp --dport 22 -j ACCEPT
+/sbin/iptables -A INPUT -s 193.192.97.3/32 -p tcp -m tcp --dport 22 -j ACCEPT
+/sbin/iptables -A INPUT -s 193.192.97.2/32 -p tcp -m tcp --dport 22 -j ACCEPT
+/sbin/iptables -A INPUT -s 172.26.1.2/32 -p tcp -m tcp --dport 22 -j ACCEPT
+/sbin/iptables -A INPUT -s 193.192.122.63/32 -p tcp -m tcp --dport 22 -j ACCEPT
