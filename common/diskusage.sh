@@ -2,6 +2,7 @@
 # 
 # update code 	
 # wget --backups=1 https://gitlab.com/frmax/public-scripts/raw/master/common/diskusage.sh -O /usr/local/bin/diskusage.sh
+# if grep "sh /usr/local/bin/diskusage.sh" /var/spool/cron/root; then echo "Entry already in crontab"; else echo "00  * * * * sh /usr/local/bin/diskusage.sh" >>  /var/spool/cron/root; fi
 #
 
 #admin email hesabi
@@ -23,7 +24,7 @@ MAIL=/bin/mail
 # tum disk bilgileri buraya depolaniyor
 EMAIL=""
 
-for line in $(df -hP | egrep '^/dev/' | awk '{ print $6 "_:_" $5 "-:-" $4 }')
+for line in $(df -P | egrep '^/dev/' | awk '{ print $6 "_:_" $5 "-:-" $4 }')
 do
 
         part=$(echo "$line" | awk -F"_:_" '{ print $1 }')
