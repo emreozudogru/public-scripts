@@ -29,7 +29,7 @@ do
 
         part=$(echo "$line" | awk -F"_:_" '{ print $1 }')
         part_usage_percent=$(echo "$line" | awk -F"_:_" '{ print $2 }' | cut -d'%' -f1 )
-		part_usage_byte=$(echo "$line" | awk -F"-:-" '{ print $2 }' )
+		part_usage_byte=$(echo "$line" | awk -F"-:-" '{ print $2 }' | cut -f1 )
 
         if [ $part_usage_percent -ge $THRESHOLDPERCENT -a -z "$EMAIL" ] && [ $part_usage_byte -ge $THRESHOLDBYTE -a -z "$EMAIL" ];
         then
