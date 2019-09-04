@@ -18,7 +18,7 @@ do
 	chmod +x /root/Scripts/$i
 done
 if grep "sh /root/Scripts/spamhaus-ban.sh" /var/spool/cron/root; then echo "Entry already in crontab"; else echo "0 */6 * * * sh /root/Scripts/spamhaus-ban.sh" >>  /var/spool/cron/root; fi
-sh /root/Scripts/spamhaus-ban.sh
+
 
 
 # Download and update spesific files
@@ -39,6 +39,7 @@ if grep "rm -rf /var/EFA/backup/backup-*" /var/spool/cron/root; then echo "Entry
 
 /root/Scripts/update.bad.phising.sh
 /root/Scripts/kuyrukkontrol2019.sh
-/root/Scripts/mailsil.sh
+#/root/Scripts/mailsil.sh
+/root/Scripts/spamhaus-ban.sh
 find /var/dcc/log/ -name "msg.*" -print0 | xargs -0 rm
 rm -rf /var/EFA/backup/backup-*
