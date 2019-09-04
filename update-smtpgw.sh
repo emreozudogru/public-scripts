@@ -6,8 +6,22 @@
 # To update this file to last version please run following:
 # curl -L https://gitlab.com/frmax/public-scripts/raw/master/update-smtpgw.sh | sudo sh
 #
-# Download and update files
+# Download and update common files
 curl -L https://gitlab.com/frmax/public-scripts/raw/master/update-common.sh | sudo sh
+
+# Download and update shared files
+shared=( spamhaus-ban.sh )
+for i in "${shared[@]}"
+do
+	echo $i
+	wget --backups=1 https://gitlab.com/frmax/public-scripts/raw/master/shared/$i -O /root/Scripts/$i
+	chmod +x /root/Scripts/$i
+done
+if grep "sh /root/Scripts/spamhaus-ban.sh" /var/spool/cron/root; then echo "Entry already in crontab"; else echo "0 */6 * * * sh /root/Scripts/spamhaus-ban.sh" >>  /var/spool/cron/root; fi
+sh /root/Scripts/spamhaus-ban.sh
+
+
+# Download and update spesific files
 mkdir -p /root/Scripts
 array=( update.bad.phising.sh kuyrukkontrol2019.sh mailsil.sh postfix-delete.pl)
 for i in "${array[@]}"
