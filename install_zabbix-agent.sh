@@ -46,6 +46,7 @@ CentOS)
     [6.01-6.99])
         echo CentOS 6
         ;;
+    echo None
     ;;
 
 
