@@ -37,5 +37,13 @@ else
     VER=$(uname -r)
 fi
 
+#Install Zabbix Agent
 echo OS: $OS
 echo Ver: $VER
+if $OS="CentOS"; then
+echo OS is CentOS
+else
+echo OS not detected
+fi
+
+
