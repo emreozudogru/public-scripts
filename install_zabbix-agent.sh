@@ -41,11 +41,11 @@ fi
 echo OS: $OS
 echo Ver: $VER
 case $OS in
-    CentOS)
+CentOS)
     case $VER in
     [6.01-6.99])
-    echo CentOS 6
+        echo CentOS 6
+        ;;
     ;;
-;;
 
 
