@@ -25,10 +25,10 @@ elif [ -f /etc/debian_version ]; then
     # Older Debian/Ubuntu/etc.
     OS=Debian
     VER=$(cat /etc/debian_version)
-elif [ -f /etc/SuSe-release ]; then
+#elif [ -f /etc/SuSe-release ]; then
     # Older SuSE/etc.
     #...
-elif [ -f /etc/redhat-release ]; then
+#elif [ -f /etc/redhat-release ]; then
     # Older Red Hat, CentOS, etc.
     #...
 else
