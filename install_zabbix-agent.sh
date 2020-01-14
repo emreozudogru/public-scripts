@@ -40,10 +40,22 @@ fi
 #Install Zabbix Agent
 echo OS: $OS
 echo Ver: $VER
-if [ $OS -eq "CentOS" ]; then
-echo OS is CentOS
-else
-echo OS not detected
-fi
+case $OS in
+    CentOS)
+    case $VER in
+    6.0)
+    6.1)
+    6.2)
+    6.3)
+    6.4)
+    6.5)
+    6.6)
+    6.7)
+    6.8)
+    6.9)
+    6.10)
+    echo CentOS 6
+    ;;
+;;
 
 
